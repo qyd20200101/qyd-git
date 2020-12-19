@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style{
+            position: fixed;
+            top: 0px;
+            height: 50px;
+        }
+         * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 14px;
+            font-family: STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif;
+            display: block;
+            margin: 8px;
+        }
+        html,body{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .head {
+            height: 40px;
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+        .left {
+            background: greenyellow;
+            width: 20px;
+            height: 20px;
+        }
+        .right {
+            display: flex;
+            flex-direction: row;
+            color: #fff;
+            font-size: 14px;
+        }
+        .right div + div {
+            margin-left: 40px;
+        }
+        .center-block{
+            max-width: 1200px;
+            margin:0 auto;
+        }
+        .zindex{
+            position: relative;
+            z-index: 99;
+        }
+        artcle{
+            display: block;
+        }
+        div{
+            display: block;
+        }
+        .work{
+            background: #f7f7f7;
+            overflow: hidden;
+        }
+        nav{
+            position: relative;
+            width: 100%;
+            background: rgba(0,0,0,.85);
+            height: 50px;
+            z-index: 9998;
+            box-shadow: 0 50px 5px rgba(0,0,0,.1);
+            display: block;
+        }
+        .bannerBg{
+            width: 100%;
+            height: 100%;
+        }
+        .banner {
+
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .swiper-container{
+            margin: 0 auto;
+            position:; 
+            overflow:hidden;
+            z-index: 1;
+        }
+        .work-list-tab{
+            font-size: 0;
+            text-align: center;
+            margin-top: 60px;
+        }
+        .work-list{
+            overflow:hidden;
+            margin-top:40px;
+            font-size: 0;
+            text-align: cener;
+        }
+        ul,li,ol{
+            list-style: none;
+        }
+        ul{
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bannnerBg">
+        <div class="swiper-containerbanner swiper-container-horizontal">
+            <div class="swiper-wrapper"style="transform: translate3d(-150px,0px,0px);"transition-duration:0ms;></div>
+<!--Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+                <span class="swiper-pagination-bullet"></span>
+                <span class="swiper-pagination-bullet swiper-pagination-bullet-active">
+                </span>
+            </div>
+            <div class="arrow-down"></div>
+        </div>
+    </div>
+    <div id="underfined-sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 50px;">
+        <nav style="position:fixed; top:0px">
+            <div class="center-block"></div>
+        </nav>
+    </div>
+    <!--关于我-->
+    <article class="about zindex" id="about">
+        <div class="center-block"></div>
+    </article>
+    <!--作品-->
+    <article class="works zindex" id="case">
+        <div class="cenetr-block"></div>
+        <div class="worl-list-tab"></div>
+        <ul class="work-list"></ul>
+        <ul class="works-list" style="display: none;"></ul>
+        <ul class="works-list" style="display: none;"></ul>
+        <a href="#" target="_blank" date-scroll-reveal="enter top after .3s" class="button" data-scroll-reveal-di="16" style="-webkit-transform: translatey(-100px);transform: translatey(-100px); opacity: 0;-webkit-transition: -webkit-transform 0.66s ease-in-out .3s;transition: transform 0.66s ease-in-out0s, opacity 0.66 ease-in-out .3s;-webkit-perspective: 1000; -webkit-backface-visibility: hidden;"data-scroll-reveal-initialized="ture">...</a>
+    </article>
+</body>
+</html>
