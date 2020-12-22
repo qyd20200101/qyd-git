@@ -58,9 +58,6 @@
         artcle{
             display: block;
         }
-        div{
-            display: block;
-        }
         .work{
             background: #f7f7f7;
             overflow: hidden;
@@ -105,6 +102,15 @@
             letter-spacing: 5px;
             text-transform: uppercase;
         }
+        .biock-info{
+            color: #242424;
+            font-weight: lighter;
+            font-size: 14px;
+            letter-spacing: 3px;
+            line-height: 24px;
+            text-align: center;
+            padding: 0 10px;        
+        }
         h1,h2,h3,h4,h5,h6{
             font-weight: normal;
         }
@@ -117,18 +123,79 @@
             margin-inline-end: 0px;
             font-weight: bold;
         }
+        hr{
+            display: block;
+            unicode-bidi: isolate;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 1px;
+        }
+        hr.line{
+            height: 12px;
+            border: none;
+            width: 45px;
+            background: #424242;
+            display: bllock;
+            margin: 30px auto 45px;
+        }
+        p{
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
         .swiper-container{
             margin: 0 auto;
             position:; 
             overflow:hidden;
             z-index: 1;
         }
-        .work-list-tab{
+        .skill-list{
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: -20px;
+        }
+        .skill-list
+        .skill-item{
+            position: relative;
+            margin: 0 20px;
+            cursor: pointer;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 1px dashed #424242;
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 9;
+        }
+        ul,li,ol{
+            list-style: none;
+        }
+        ul{
+            display: block;
+            list-style-type: disc;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        li{
+            display: list-item;
+            text-align: -wbkit-match-parent;
+        }
+
+        .works-list-tab{
             font-size: 0;
             text-align: center;
             margin-top: 60px;
         }
-        .work-list{
+        .works-list{
             overflow:hidden;
             margin-top:40px;
             font-size: 0;
@@ -193,18 +260,18 @@
         <div class="cenetr-block">
             <h2 class="block-titleEn" data-scroll-reveal-di="enter top after 0.1s">my works</h2>
             <h3 class="block-title" data-scroll-reveal-di="enter bottom after 0.3s">精选案例</h3>
-            <hr class="line" data-scroll-reveal="enter botton after .4s">
-            <p class="block-info" data-scroll-reveal="enter top after .5s">"热衷于新技术的学习和探讨，热衷于页面布局。崇尚化繁为简理念"</br>
+            <hr class="line" data-scroll-reveal="enter botton after .4s" data-scroll-reveal-id="14" style="-webkit-transform: translatey(100px);transform: translatey(100px);opacity: 0;-webkit-transition: -webkit-transform 0.66s ease-in-ot 0s, opacity 0.66s ease-in-out .5s;transition: transform 0.66s ease-in-out 0s, opacity 0.66s ease-in-out .5s; -webkit-perspecitive: 1000;-webkit-backface-visibility: hidden;" data-scroll-reveal-initialized="true">
+            <p class="block-info" data-scroll-reveal="enter top after .5s" data-scroll-reveal-id="15" style="-webkit-transform: translatey(-100px);transform: translatey(-100px);opacity: 0;-webkit-transition: -webkit-transform 0.66s ease-in-ot 0s, opacity 0.66s ease-in-out .5s;transition: transform 0.66s ease-in-out 0s, opacity 0.66s ease-in-out .5s;-webkit-perspective: 1000;-webkit-backface-visibility: hidden;" data-scroll-reveal-initialized="true">"热衷于新技术的学习和探讨，热衷于页面布局。崇尚化繁为简理念"</br>
             "对互联网发展趋势高兴趣关注，积极配合开发同事完成工作"</p>
         </div>
-        <div class="worl-list-tab">
+        <div class="works-list-tab">
             <ul>
                 <li class="act">响应式</li>
                 <li>PC端</li>
                 <li>移动端</li>
             </ul>
         </div>
-        <ul class="work-list">
+        <ul class="works-list">
             <li>
                 <a href="/home/works/cart/cart.html" target="_blank" rel="nofollow">
                     <div class="work-list-titlebg">
@@ -405,22 +472,22 @@
         <div class="center-block">
             <ul>
                 <li data-scroll-reveal="enter top after .1s">
-                    <i class="iconfont">?</i>
+                    <i class="iconfont"></i>
                     <h2 class="con-title">官网建设</h2>
                     <p class="info-con">展示企业形象，宣传产品与服务。</p>
                 </li>
                 <li data-scroll-reveal="enter top after .2s">
-                    <i class="iconfont">?</i>
+                    <i class="iconfont"></i>
                     <h2 class="con-title">行业门户</h2>
                     <p class="info-con">打造商务品台，树立权威形象。</p>
                 </li>
                 <li data-scroll-reveal="enter top aftre .3s">
-                    <i class="iconfont">?</i>
+                    <i class="iconfont"></i>
                     <h2 class="con-title">手机网站</h2>
                     <p class="info-con">开发WAP端市场客户，精准推广</p>
                 </li>
                 <li data-scroll-reveal="rneter top aftre .4s">
-                    <i class="iconfong">?</i>
+                    <i class="iconfong"></i>
                     <h2 class="conn-title">个人网站</h2>
                     <p class="info-con">记录你的生活的故事，闪现的灵感</p>
                 </li>
@@ -441,12 +508,6 @@
                 <img src="imges/case3.png" alt="72变智能硬件" title="72变智能硬件">
             </div>
             <a href="#" target="_blank" class="button" data-scroll-reveal="enter top after .4s">
-<<<<<<< HEAD
-            
-=======
-                ::before
-                ::after
->>>>>>> cad8c4b74b19845722fbe53befcfe11b02f9bd9c
             </a>
         </div>
     </article>
