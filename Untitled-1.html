@@ -14,61 +14,76 @@
             margin: 0;
             padding: 0;
         }
-        body{
-            font-size: 14px;
-            font-family: STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif;
-            display: block;
-            margin: 8px;
+        a{
+            transition: all .3s !important;
+            text-decoration: none;
+            color: #fff;
         }
-        html,body{
+        a:-webkit-any-link{
+            color: webkit-link;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        a.button{
+            overflow: hidden;
             position: relative;
+            display: block;
+            width: 200px;
+            height: 45px;
+            border: 1px solid #424242;
+            line-height: 45px;
+            color: #171717;
+            font-size: 16px;
+            text-align: center;
+        }
+        a.button::before{
+            content: "我的简历";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            display: block;
+            width: 100%;
+            height: 100%;
+            transition: all 0.3s ease 0s;
+        }
+
+        a.button:after{
+            font-family: "iconfont"!important;
+            content: "\e621";
+            font-size: 30px;
+            position: absolute;
+            transition: all .3s;
+            color: #fff;
+            opacity: 0;
+            left: 0;
+            top: -100%;
+            display: block;
             width: 100%;
             height: 100%;
         }
-        .head {
-            height: 40px;
-            background-color: #000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 40px;
-        }
-        .left {
-            background: greenyellow;
-            width: 20px;
-            height: 20px;
-        }
-        .right {
-            display: flex;
-            flex-direction: row;
-            color: #fff;
-            font-size: 14px;
-        }
-        .right div + div {
-            margin-left: 40px;
-        }
-        .center-block{
-            max-width: 1200px;
-            margin:0 auto;
-        }
-        .zindex{
-            position: relative;
-            z-index: 99;
-        }
-        artcle{
-            display: block;
-        }
-        .work{
-            background: #f7f7f7;
+        .advantage{
+            background: #fff;
             overflow: hidden;
         }
-        nav{
-            position: relative;
-            width: 100%;
-            background: rgba(0,0,0,.85);
-            height: 50px;
-            z-index: 9998;
-            box-shadow: 0 50px 5px rgba(0,0,0,.1);
+        .adv-title{
+            padding: 60px 0;
+            background: #333;
+            text-align: center;
+            font-size: 25px;
+            color: #fff;
+            line-height: 48px;
+            font-weight: bold;
+        }
+        .adv-title-info{
+            font-weight: 100;
+            font-size: 14px;
+            color: rgba(255,255, 255, .8);
+        }
+        .about{
+            background: #fff;
+            overflow: hidden;
+        }
+        artcle{
             display: block;
         }
         .bannerBg{
@@ -102,7 +117,7 @@
             letter-spacing: 5px;
             text-transform: uppercase;
         }
-        .biock-info{
+        .block-info{
             color: #242424;
             font-weight: lighter;
             font-size: 14px;
@@ -111,8 +126,36 @@
             text-align: center;
             padding: 0 10px;        
         }
+        body{
+            font-size: 14px;
+            font-family: STHeiti,'Microsoft YaHei',Helvetica,Arial,sans-serif;
+            display: block;
+            margin: 8px;
+        }
+        .contact{
+            background: #f7f7f7;
+            overflow: hidden;
+        }
+        .center-block{
+            max-width: 1200px;
+            margin:0 auto;
+        }
+        html,body{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
         h1,h2,h3,h4,h5,h6{
             font-weight: normal;
+        }
+        h2{
+            display: block;
+            font-size: 1.5em;
+            margin-block-start: 0.83em;
+            margin-block-end: 0.83em;
+            margin-inline-start: 0px;
+            scroll-margin-inline-end: 0px;
+            font-weight: bold;
         }
         h3{
             display: block;
@@ -142,12 +185,92 @@
             display: bllock;
             margin: 30px auto 45px;
         }
+        hr{
+            display: block;
+            border: none;
+            margin: 30px auto;
+            width: 40px;
+            background: #ccc;
+            height: 2px;
+        }
+        hr{
+            display: block;
+            unicode-bidi: isolate;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 1px;
+        }
         p{
             display: block;
             margin-block-start: 1em;
             margin-block-end: 1em;
             margin-inline-start: 0px;
             margin-inline-end: 0px;
+        }
+        .head {
+            height: 40px;
+            background-color: #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+        }
+        .left {
+            background: greenyellow;
+            width: 20px;
+            height: 20px;
+        }
+        .right {
+            display: flex;
+            flex-direction: row;
+            color: #fff;
+            font-size: 14px;
+        }
+        .right div + div {
+            margin-left: 40px;
+        }
+        .info-title{
+            text-align: center;
+            letter-spacing: 1px;
+            color: #404040;
+            letter-spacing: 3px;
+            font-size: 26px;
+            font-weight: bold;
+            line-height: 48px;
+        }
+        .partner{
+            background: #335567;
+            overflow: hidden;
+            padding: 200px 0;
+        }
+        .partner a.button{
+            background: #f97352;
+            color: #fff;
+            border: none;
+        }
+        .partner .info-con img{
+            display: inline-block;
+            padding: 0 30px;
+            opacity: .2;
+            transition: all .3s;
+            cursor: pointer;
+            height: 70px;
+            --webkit-filter:grayscale(100%);
+            moz-filter: grayscale(100%);
+            ms-filter: grayscle(100%);
+            o-filter: grayscale(100%);
+            filter: grayscale(100%);
+            filter: gray;
+        }
+        .partner .info-title{
+            color: #fff;
+        }
+        .partner .info-con{
+            text-align: center;
         }
         .swiper-container{
             margin: 0 auto;
@@ -160,7 +283,6 @@
             margin-top: 50px;
             margin-bottom: -20px;
         }
-        .skill-list
         .skill-item{
             position: relative;
             margin: 0 20px;
@@ -173,17 +295,25 @@
             overflow: hidden;
             z-index: 9;
         }
-        ul,li,ol{
-            list-style: none;
+        .works{
+            background: #f7f7f7;
+            overflow: hidden;
         }
-        ul{
+        .works:before{
+            counter-increment: "More";
+        }
+        nav{
+            position: relative;
+            width: 100%;
+            background: rgba(0,0,0,.85);
+            height: 50px;
+            z-index: 9998;
+            box-shadow: 0 50px 5px rgba(0,0,0,.1);
             display: block;
-            list-style-type: disc;
-            margin-block-start: 1em;
-            margin-block-end: 1em;
-            margin-inline-start: 0px;
-            margin-inline-end: 0px;
-            padding-inline-start: 40px;
+        }
+        .zindex{
+            position: relative;
+            z-index: 99;
         }
         li{
             display: list-item;
@@ -195,14 +325,17 @@
             text-align: center;
             margin-top: 60px;
         }
+        .works-list-tab li.act{
+            background: #666;
+            color: #fff;
+        }
         .works-list{
             overflow:hidden;
             margin-top:40px;
             font-size: 0;
             text-align: cener;
         }
-        .works-list li
-        img{
+        .works-list-tab li{
             display: block;
             width: 100%;
             transition: all 1.1s;
@@ -507,9 +640,17 @@
                 <img src="imges/case2.png" alt="华夏天工网络科技有限公司" title="华夏天工网络科技有限公司">
                 <img src="imges/case3.png" alt="72变智能硬件" title="72变智能硬件">
             </div>
-            <a href="#" target="_blank" class="button" data-scroll-reveal="enter top after .4s">
+            <a href="#" target="_blank" class="button" data-scroll-reveal="enter top after .4s" data-scroll-reveal-id="30" style="-webkit-transform: translatey(0);transform: translatey(0);opacity: 1;-webkit-transition: -webkit-transform 0.66s ease-in-out .4s, opacity 0.66s ease-in-out .4s;-webkit-perspective: 1000;-webkit-backface-visibility: hidden;" data-scroll-reveal-initialized="true">
             </a>
         </div>
     </article>
+    <!--联系我-->
+    <article class="contact zindex">
+        <div class="center-block" id="contact">
+            <h2 class="block-titleEn" data-scroll-reveal="enter top after .5s" data-scroll-reveal-id="31" style="-webkit-transform: translatey(-100px);transform: translatey(-100px);opacity: 0;-webkit-transition: -webkit-transform 0.66s ease-in-out 0s, opacity 0.66s ease-in-out .5s;transition: transform 0.66s ease-in-out 0s, opacity 0.66s ease-in-out .5s;-webkit-perspective: 1000;-webkit-backface-visibility:hidden;" data-scroll-reveal-initialized="true">contact</h2>
+            <h3 class="block=title" data-scroll-reveal="enter top after .7s" data-scroll-reveal-id="32" style="-webkit-transform: translatey(-100px);transform: translatey(-100px);opacity: 0;-webkit-transition: -webkit-transform 0.66s ease-in-out 0s, opacity o.66s ease-in-out .7s; transition: transform 0.66s ease-in-out 0s, opacity 0.66sease-in-out .7s;-webkit-perspective: 1000;-webkit-backface-visibility: hidden;" data-scroll-reveal-initialized="trud">联系我</h3>
+        </div>
+
+    </article>>
 </body>
 </html>
