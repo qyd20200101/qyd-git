@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream-demo</title>
+</head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-size: 14px;
+            font-family: STHeiti,'Microsoft YaHei',Helvtica,Arial, Helvetica, sans-serif;
+        }
+        html,body{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .preloader{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 9999;
+        }
+        div{
+            display: block;
+        }
+        .preloader .loaditem{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            margin-left: -50px;
+            top: 50%;
+            margin: -50px;
+        }
+        .bannerBg{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-container{
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .swiper-wrapper{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index:1;
+            display: flex;transition-property: transform;
+            box-sizing: content-box;
+        }
+        .banner .swiper-slide{
+            position: relative;
+            background-size: cover;
+            cursor: pointer;
+            text-align: center;
+        }
+        .slide-1{
+            background: url(../imges/page1.jpg) no-repeat center #000;
+        }
+        .center{
+            position: relative;
+            background-size: cover;
+            cursor:pointer;
+            text-align:center;
+            display: webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content:center;
+            justify-content: center;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+        .swiper-slide{
+            -webkit-flex-shrink:0;
+            flex-shrink: 0;
+            height: 100%;
+        }
+        .banner-opacity{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.4);
+            z-index: 1;
+        }
+        .banner-info{
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            margin-bottom: 120px;
+        }
+        .banner-logo{
+            width: 132px;
+            height: 132px;
+            margin: 120px;
+        }
+
+    </style>
+<body>
+    <div class="bannerBg">
+        <div class="swiper-container banner swiper-container-horizontal">
+            <div class="swiper-wrapper" style="transform: translate3d(-704px,0px,0px); transition-duration: 300ms;">
+                <div class="swiper-slide center slde-1 swiper-prev" style="width:704px;">
+                    <div class="banner-opacity"></div>
+                    <div class="banner-info">
+                        <div class="banner-logo">
+                            <img src="imges/logo.png" alt="商标">
+                        </div>
+                        <div class="banner-title">涅槃重生</div>
+                        </hr>
+                        <div class="banner-text">做最新的自己</div>
+                    </div>   
+                </div>
+                <div class="swiper-slide center slide-swiper-slide-active" style="width: 704px;">
+                    <div class="banner-opacity"></div>
+                    <div class="banner-info">
+                        <div class="banner-logo dreamText">
+                            <img src="imgex/ico dream.png" alt="梦想">
+                        </div>
+                        <div class="banner-logo dreamEn">
+                            <img src="imges/ico dreamEn.png" alt="梦想">
+                        </div>
+                        <div class="benner-text">为梦想，不休不止</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
