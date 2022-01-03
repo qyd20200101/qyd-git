@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<script src="animation.js"></script>
+<style>
+    element style {
+        color: rgb(255, 255, 255);
+    }
+    
+    * {
+        margin: 0;
+    }
+    
+    body {
+        color: #222;
+    }
+    
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        font-weight: 500;
+    }
+    
+    ul {
+        display: none;
+        line-height: 1.7;
+    }
+    
+    button {
+        outline: none;
+    }
+    
+    input::-webkit-search-cancel-button {
+        display: none;
+    }
+    
+    a:-webkit-any-link {
+        cursor: pointer;
+    }
+    
+    .say-my-life-i-taiyang:before {
+        content: "\e600";
+    }
+    
+    #app {
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .theme-dark {
+        width: 100%;
+        height: 700px;
+    }
+    
+    .theme-dark .theme-container {
+        background: #171d20;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 20;
+        right: 0;
+        line-height: 2.2rem;
+        background-color: #171d20;
+        border-bottom: none;
+        width: 100%;
+        height: 50px;
+        color: white;
+        box-sizing: border-box;
+    }
+    
+    .navbar .index-header-transparent {
+        border: none;
+    }
+    
+    .navbar a {
+        opacity: 1!important;
+    }
+    
+    .navbar a .logo {
+        position: relative;
+        display: none;
+        height: 1.4rem!important;
+        margin-left: 0.8rem;
+        vertical-align: top;
+        border-radius: 25px;
+    }
+    
+    .navbar a span {
+        display: inline-block;
+        margin-left: 20px;
+        line-height: 50px;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    
+    .navbar .link {
+        display: flex;
+        position: absolute;
+        padding-left: 1.5rem;
+        max-width: 652px;
+        box-sizing: border-box;
+        white-space: nowrap;
+        font-size: .9rem;
+        right: 1.5rem;
+        top: 0.7rem;
+        background: transparent;
+    }
+    
+    .link .color-button {
+        cursor: pointer;
+        height: 30px;
+        line-height: 31px;
+        min-width: 50px;
+        margin-top: 4px;
+        margin-right: 10px;
+        text-align: center;
+        color: rgba(0, 0, 0, 54);
+        transition: all .5s ease;
+    }
+    
+    .link .color-button i {
+        font-size: 22px;
+    }
+    
+    .say-my-life-i {
+        font-family: say-my-life-i!important;
+        font-style: normal;
+        -webkit-font-feature-smoothing: antialiased;
+    }
+    
+    .logo {
+        height: 1.4rem;
+    }
+    
+    .link nav {
+        display: inline-block;
+        font-size: .9rem;
+    }
+    
+    .link .search-box {
+        display: inline-block;
+        position: relative;
+        margin-right: 1rem;
+        flex: 0 0 auto;
+        vertical-align: top;
+        outline: none;
+    }
+    
+    #search {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        margin-right: 20px;
+        -webkit-appearance: none;
+        border-color: transparent;
+        border-radius: 2rem;
+        width: 150px;
+        height: 2rem;
+        color: #4e6e8e;
+        border-radius: 2rem;
+        line-height: 2rem;
+        outline: none;
+        transition: all .2s ease;
+        pad: 0 0.5rem 0 2rem;
+        background: #fff url(image/search.83621669.svg) 0.5rem 0.4rem no-repeat;
+        background-size: 1rem;
+    }
+    
+    .nav-link {
+        display: inline-block;
+    }
+    
+    .nav-link .nav-item {
+        position: relative;
+        display: inline-block;
+        margin-left: 1.5rem;
+        width: 60px;
+        line-height: 2rem;
+    }
+    
+    .nav-item :first-child {
+        margin-left: 0;
+    }
+    
+    .nav-item a {
+        line-height: 1.4rem;
+        display: inline-block;
+        color: white;
+    }
+    
+    .dropdown-wrapper {
+        height: 1.8rem;
+        cursor: pointer;
+    }
+    
+    .dropdown-wrapper .dropdown-title {
+        display: block;
+        font-size: .9rem;
+        font-family: inherit;
+        cursor: inherit;
+        padding: inherit;
+        line-height: 1.4rem;
+        background: transparent;
+        border: none;
+        font-weight: 500;
+        color: #2c3e50;
+    }
+    
+    .navbar span {
+        display: inline-block;
+    }
+    
+    .arrow {
+        width: 0;
+        height: 0;
+    }
+    
+    .nav-dropdown {
+        height: auto !important;
+        box-sizing: border-box;
+        max-height: calc(100vh - 2.7rem);
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 0.6rem;
+        text-align: left;
+        border-radius: 0.25rem;
+        white-space: nowrap;
+        margin: 0;
+    }
+    
+    .dropdown-title>title {
+        display: inline-block;
+    }
+    
+    .dropdown-wrapper .dropdown-title .arrow {
+        vertical-align: middle;
+        margin-top: -1px;
+        margin-left: 0.4rem;
+    }
+    
+    .Mydiv {
+        background-size: cover;
+        z-index: -10;
+        background: url(image/night-sky-g3338bed1a_1280.jpg);
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        width: 100%;
+        height: 100%;
+        min-width: 1000px;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+    }
+</style>
+
+<body>
+    <div id="app" class="theme-dark">
+        <div class="theme-container no-sidebar index">
+            <header class="navbar index-header-transparent">
+                <a href="">
+                    <img src="image/Q.jpeg" alt="Q" class="logo">
+                    <span>Q</span>
+                </a>
+                <div class="link">
+                    <div class="color-button">
+                        <i class="say-my-life-i say-my-life-i-taiyang"></i>
+                    </div>
+                    <div class="search-box">
+                        <input aria-label="Search" type="text" id="search" autocomplete="off" spellcheck="false">
+                    </div>
+                    <nav class="nav-link">
+                        <div class="nav-item">
+                            <a href="">首页</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="">归档</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="">标签</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="">笔记</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="">生活</a>
+                        </div>
+                        <div class="nav-item">
+                            <div class="dropdown-wrapper">
+                                <button type="button" aria-label="Github" class="dropdown-title">
+                                <span class="title">Github</span>
+                                <span class="arrow right"></span>
+                            </button>
+                                <ul class="nav-dropdown">
+                                    <li>
+                                        <a href=""></a>
+                                    </li>
+                                    <li>
+                                        <a href=""></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+        <div class="Mydiv">
+
+        </div>
+    </div>
+</body>
+
+</html>
