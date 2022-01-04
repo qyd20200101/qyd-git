@@ -6,15 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Q</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="">
 </head>
 <script src="animation.js"></script>
 <style>
     element style {
         color: rgb(255, 255, 255);
-    }
-    
-    * {
+        max-width: 576px;
         margin: 0;
     }
     
@@ -28,9 +26,19 @@
         font-weight: 500;
     }
     
+    a,
+    a:link {
+        text-align: none;
+        cursor: pointer;
+    }
+    
     ul {
         display: none;
         line-height: 1.7;
+    }
+    
+    li {
+        list-style: none;
     }
     
     button {
@@ -69,15 +77,17 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 20;
         right: 0;
+        padding: 0.7rem 1.5rem;
+        transition: all .5s ease;
+        z-index: 20;
         line-height: 2.2rem;
+        box-sizing: border-box;
         background-color: #171d20;
         border-bottom: none;
         width: 100%;
-        height: 50px;
-        color: white;
-        box-sizing: border-box;
+        height: 3.6rem;
+        color: #fff;
     }
     
     .navbar .index-header-transparent {
@@ -107,6 +117,7 @@
     }
     
     .navbar .link {
+        max-width: 700px;
         display: flex;
         position: absolute;
         padding-left: 1.5rem;
@@ -114,7 +125,7 @@
         box-sizing: border-box;
         white-space: nowrap;
         font-size: .9rem;
-        right: 1.5rem;
+        right: 3.5rem;
         top: 0.7rem;
         background: transparent;
     }
@@ -186,13 +197,17 @@
     .nav-link .nav-item {
         position: relative;
         display: inline-block;
+        width: 30px;
         margin-left: 1.5rem;
-        width: 60px;
         line-height: 2rem;
     }
     
     .nav-item :first-child {
         margin-left: 0;
+    }
+    
+    .nav-item:last-child {
+        padding-right: 20px;
     }
     
     .nav-item a {
@@ -216,19 +231,38 @@
         background: transparent;
         border: none;
         font-weight: 500;
-        color: #2c3e50;
+        color: #fff;
+    }
+    
+    .theme--darkheader .navbar .dropdown-title>title {
+        display: inline-block;
+        color: #fff;
+    }
+    
+    .dropdown-wrapper:hover .nav-dropdown {
+        display: block;
     }
     
     .navbar span {
         display: inline-block;
     }
     
-    .arrow {
+    .dropdown-wrapper .dropdown-title .arrow {
         width: 0;
         height: 0;
+        vertical-align: middle;
+        margin-top: -1px;
+        margin-left: 0.4rem;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 6px solid #ccc;
+        border-bottom: 0;
     }
     
-    .nav-dropdown {
+    .dropdown-wrapper .nav-dropdown {
+        display: none;
+        background: #2f3133;
+        border: none;
         height: auto !important;
         box-sizing: border-box;
         max-height: calc(100vh - 2.7rem);
@@ -243,27 +277,118 @@
         margin: 0;
     }
     
-    .dropdown-title>title {
-        display: inline-block;
+    .dropdown-itrm {
+        color: inherit;
+        line-height: 1.7rem;
     }
     
-    .dropdown-wrapper .dropdown-title .arrow {
-        vertical-align: middle;
-        margin-top: -1px;
-        margin-left: 0.4rem;
+    .dropdown-itrm a {
+        display: block;
+        line-height: 1.7rem;
+        position: relative;
+        border-bottom: none;
+        font-weight: 400;
+        margin-bottom: 0;
+        padding: 0 1.5rem 0 1.25rem;
     }
     
-    .Mydiv {
-        background-size: cover;
-        z-index: -10;
-        background: url(image/night-sky-g3338bed1a_1280.jpg);
-        background-repeat: no-repeat;
-        background-origin: border-box;
+    .sidebar-mask {
+        z-index: 9;
+        width: 100vh;
+        height: 100vh;
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    .hide-password {
+        z-index: 9999;
+        width: 200px;
+        height: 160px;
+        position: fixed !important;
+        top: -230px;
+        left: 50%;
+        padding: 50px 20px 20px;
+        margin-left: -100px;
+        text-align: center;
+        font-size: 28px;
+        background: #fff;
+        border-radius: 30px;
+        box-shadow: 0 2px 8px rgb(0, 0, 0 /20%);
+        transition: all .4s ease;
+        overflow: hidden;
+    }
+    
+    .hide-password i.cente {
+        position: absolute;
+        left: 50%;
+        margin-left: -14px;
+    }
+    
+    .shni {
+        font-family: shni !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+    }
+    /*  */
+    
+    .theme-dark .home {
+        display: block;
+        margin: 0 auto;
+        background: #171d20 !important;
         width: 100%;
-        height: 100%;
-        min-width: 1000px;
-        -webkit-background-size: cover;
-        -o-background-size: cover;
+        padding: 0;
+        max-width: 100% !important;
+        transition: all .5s ease !important;
+    }
+    
+    .home .hero {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        display: none !important;
+        text-align: center;
+    }
+    /*  */
+    
+    .theme-default-content {
+        width: 100%;
+        position: relative;
+        min-height: calc(100% - 120px);
+    }
+    
+    .content_default {
+        max-width: 100% !important;
+        margin: 0 !important;
+        overflow-x: hidden;
+    }
+    
+    .theme-default-content.custom {
+        padding: 0;
+    }
+    
+    .index-wrap .banner-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        background-size: cover;
+    }
+    
+    .index-wrap .banner-wrap img {
+        width: 7rem;
+        margin-right: 40px;
+        border-radius: 50%;
+    }
+    
+    .theme-default-content .custom img {
+        max-width: 100%;
+        height: auto;
+        border: 0;
     }
 </style>
 
@@ -275,13 +400,16 @@
                     <img src="image/Q.jpeg" alt="Q" class="logo">
                     <span>Q</span>
                 </a>
+                <!--  -->
                 <div class="link">
+                    <!--  -->
                     <div class="color-button">
                         <i class="say-my-life-i say-my-life-i-taiyang"></i>
                     </div>
                     <div class="search-box">
                         <input aria-label="Search" type="text" id="search" autocomplete="off" spellcheck="false">
                     </div>
+                    <!--  -->
                     <nav class="nav-link">
                         <div class="nav-item">
                             <a href="">首页</a>
@@ -300,27 +428,105 @@
                         </div>
                         <div class="nav-item">
                             <div class="dropdown-wrapper">
-                                <button type="button" aria-label="Github" class="dropdown-title">
-                                <span class="title">Github</span>
+                                <button type="button" aria-label="Gitee" class="dropdown-title">
+                                <span class="title">Gitee</span>
                                 <span class="arrow right"></span>
                             </button>
                                 <ul class="nav-dropdown">
-                                    <li>
-                                        <a href=""></a>
+                                    <li class="dropdown-item">
+                                        <a href="https://gitee.com/DengQianSG" target="_black" rel="noopener noreferrer" class="nav-link external">小Q</a>
                                     </li>
-                                    <li>
-                                        <a href=""></a>
+                                    <li class="dropdown-item">
+                                        <a href="https://gitee.com/DengQianSG/qyd-html.git">项目地址</a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </nav>
+                    <!--  -->
                 </div>
             </header>
+            <!--  -->
+            <div class="sidebar-mask"></div>
+            <!--  -->
+            <aside class="sidebar">
+                <!--  -->
+                <nav class="nav-link">
+                    <div class="nav-item">
+                        <a href="">首页</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="">归档</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="">标签</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="">笔记</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="">生活</a>
+                    </div>
+                    <div class="nav-item">
+                        <div class="dropdown-wrapper">
+                            <button type="button" aria-label="Gitee" class="dropdown-title">
+                                <span class="title">Gitee</span>
+                                <span class="arrow right"></span>
+                            </button>
+                            <ul class="nav-dropdown">
+                                <li class="dropdown-item">
+                                    <a href="https://gitee.com/DengQianSG" target="_black" rel="noopener noreferrer" class="nav-link external">小Q</a>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="https://gitee.com/DengQianSG/qyd-html.git">项目地址</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <!--  -->
+            </aside>
+            <!--  -->
+            <div class="hide-password" data-v-126f0c3b>
+                <i class="shni shn-lock center" data-v-126f0c3b></i>
+                <i class="shni shn-lock center" data-v-126f0c3b></i>
+                <div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <main aria-labelledby="main-title" class="home">
+                <header class="hero">
+                    <!--  -->
+                    <h1 id="main-title"></h1>
+                    <p class="description"></p>
+                </header>
+                <!--  -->
+                <div class="theme-default-content custom content_default">
+                    <div class="index-wrap">
+                        <div class="banner-wrap" style=" background-image: url(image/night-sky-g3338bed1a_1280.jpg);">
+                            <img src="image/index-logo.acd896b1.gif">
+                            <div>
+                                <h1></h1>
+                                <p></p>
+                            </div>
+                        </div>
+                        <main></main>
+                        <footer></footer>
+                    </div>
+                </div>
+            </main>
+            <!--  -->
+            <!--  -->
         </div>
-        <div class="Mydiv">
+        <div>
+            <div>
+                <canvas></canvas>
+            </div>
+        </div>
 
-        </div>
     </div>
 </body>
 
