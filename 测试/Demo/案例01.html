@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+
+    <div></div>
+    刷新后随机切换一张背景图片。
+
+</body>
+
+</html>
+
+<script>
+    window.onload = function() {
+        var bkimg = ["C:\Users\Administrator\Desktop\study\front\image\01.jpeg", "C:\Users\Administrator\Desktop\study\front\image\02.jpeg", "C:\Users\Administrator\Desktop\study\front\image\03.jpg"];
+        document.body.style.backgroundImage = "url(" + bkimg[parseInt(Math.random() * bkimg.length)] + ") no-repeat center center / 100% 100%";
+    }
+    alert("成功了");
+</script>

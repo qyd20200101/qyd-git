@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--body_bg);
+}
+
+a:last-child {
+    margin-right: 0;
+}
+
+a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--nav_color);
+    font-size: 600;
+}
+
+nav {
+    display: flex;
+    padding: 0 60px;
+    height: 60px;
+    align-items: center;
+    /* 变量相减 */
+    width: calc(100% -120px);
+    background-color: var(--nav_bg);
+}
+
+.left {
+    width: 60%;
+}
+
+.right {
+    width: 40%;
+}
+
+main {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: var(--main_color);
+}
